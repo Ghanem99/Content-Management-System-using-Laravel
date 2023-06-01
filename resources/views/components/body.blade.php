@@ -4,7 +4,5 @@
 {{--<link rel="stylesheet" href="">--}}
 
 <body>
-    <p>
         {{ $slot }}
-    </p>
 </body>
