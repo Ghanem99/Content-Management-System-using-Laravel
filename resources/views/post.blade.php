@@ -1,5 +1,8 @@
 <x-body>
-    <h1> {{ $post->title }}</h1>
+{{--    <h1> {{ $post->title }}</h1>--}}
+{{--    use this when you have a controll over this data--}}
+    <h1> {!! $post->title !!}</h1>
+
 
     <div>
         {{ $post->body }}
