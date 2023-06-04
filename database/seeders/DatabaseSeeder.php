@@ -15,48 +15,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $user = User::factory()->create();
-
-        $personal = Category::create([
-            'name' => 'Personal',
-            'slug' => 'personal'
+        $user = User::factory()->create([
+            // create a fake data, except for the user's name.
+            'name' => 'John Doe'
         ]);
 
-        $work = Category::create([
-                'name' => 'Work',
-                'slug' => 'work'
-	    ]);
-
-        $family = Category::create([
-            'name' => 'Family',
-            'slug' => 'family'
-        ]);
-
-        Post::create([
-           'user_id' => $user->id,
-            'category_id' => $family->id,
-            'title' => 'My Family Post',
-            'slug' => 'my-first-post',
-            'excerpt' => ' fjdkfjd kfjd ',
-            'body' => 'dkfjdkf dfk djkfj kj fkdjf dkj dkfjd kfjd '
-        ]);
-
-        Post::create([
-            'user_id' => $user->id,
-            'category_id' => $work->id,
-            'title' => 'My Work Post',
-            'slug' => 'my-second-post',
-            'excerpt' => ' fjdkfjd kfjd ',
-            'body' => 'dkfjdkf dfk djkfj kj fkdjf dkj dkfjd kfjd '
-        ]);
-
-        Post::create([
-            'user_id' => $user->id,
-            'category_id' => $personal->id,
-            'title' => 'My Family Post',
-            'slug' => 'my-third-post',
-            'excerpt' => ' fjdkfjd kfjd ',
-            'body' => 'dkfjdkf dfk djkfj kj fkdjf dkj dkfjd kfjd '
-        ]);
+        Post::factory(5)->create([
+            // Now, we will create a 5 post, but all of them will be written by the same user.
+            'user_id' => $user->id
+            ]);
     }
 }
