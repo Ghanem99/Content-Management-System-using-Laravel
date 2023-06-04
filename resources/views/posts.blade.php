@@ -7,9 +7,11 @@
                 </a>
             </h1>
 
-            <p>
-                <a href="/categories/{{ $post->category->slug }}"> {{ $post->category->name }}</a>
-            </p>
+            <div>
+                {{--        from user to author: your code now, reflects the way you speak.--}}
+                written by <a href="">{{ $post->author->name }}</a>
+                in <a href="">{{ $post->category->name }}</a>
+            </div>
 
             <div>
                 {{ $post->excerpt }}
