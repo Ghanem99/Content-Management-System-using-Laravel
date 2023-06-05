@@ -1,4 +1,4 @@
-<x-body>
+<x-layout>
 {{--    <h1> {{ $post->title }}</h1>--}}
 {{--    use this when you have a controll over this data--}}
     <h1> {!! $post->title !!}</h1>
@@ -17,4 +17,4 @@
     <br>
 
     <a href="/">Back to all Posts</a>
-</x-body>
+</x-layout>

@@ -1,4 +1,4 @@
-<x-body>
+<x-layout>
     @foreach($posts as $post)
         <article>
             <h1>
@@ -18,4 +18,4 @@
             </div>
         </article>
     @endforeach
-</x-body>
+</x-layout>
